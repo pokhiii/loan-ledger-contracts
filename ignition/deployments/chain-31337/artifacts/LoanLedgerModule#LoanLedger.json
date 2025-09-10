@@ -1,0 +1,133 @@
+{
+  "_format": "hh3-artifact-1",
+  "contractName": "LoanLedger",
+  "sourceName": "contracts/LoanLedger.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_borrower",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_loanAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "remaining",
+          "type": "uint256"
+        }
+      ],
+      "name": "PaymentRecorded",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "balance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "borrower",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lender",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "loanAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "recordPayment",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6080604052348015600e575f5ffd5b506040516102fc3803806102fc833981016040819052602b916065565b60018054336001600160a01b0319918216179091555f80549091166001600160a01b0393909316929092179091556002819055600355609a565b5f5f604083850312156075575f5ffd5b82516001600160a01b0381168114608a575f5ffd5b6020939093015192949293505050565b610255806100a75f395ff3fe608060405234801561000f575f5ffd5b5060043610610060575f3560e01c806312065fe0146100645780637df1f1b91461007b5780639d585f7f146100a5578063b69ef8a8146100ae578063bcead63e146100b7578063fefa9291146100ca575b5f5ffd5b6003545b6040519081526020015b60405180910390f35b5f5461008d906001600160a01b031681565b6040516001600160a01b039091168152602001610072565b61006860025481565b61006860035481565b60015461008d906001600160a01b031681565b6100dd6100d83660046101e3565b6100df565b005b5f546001600160a01b031633146101355760405162461bcd60e51b81526020600482015260156024820152744f6e6c7920626f72726f7765722063616e2070617960581b60448201526064015b60405180910390fd5b8060035410156101875760405162461bcd60e51b815260206004820152601760248201527f5061796d656e7420657863656564732062616c616e6365000000000000000000604482015260640161012c565b8060035f82825461019891906101fa565b9091555050600354604080513381526020810184905280820192909252517fc2031f9d5046cf95ac0999bee4c7ffa7d3f21c2182851082f80916894d25d0579181900360600190a150565b5f602082840312156101f3575f5ffd5b5035919050565b8181038181111561021957634e487b7160e01b5f52601160045260245ffd5b9291505056fea26469706673582212202be81d8f00b8bb1494b3a6f2923d39b196bcd22fdb80442fb93e43765e1aa1db64736f6c634300081c0033",
+  "deployedBytecode": "0x608060405234801561000f575f5ffd5b5060043610610060575f3560e01c806312065fe0146100645780637df1f1b91461007b5780639d585f7f146100a5578063b69ef8a8146100ae578063bcead63e146100b7578063fefa9291146100ca575b5f5ffd5b6003545b6040519081526020015b60405180910390f35b5f5461008d906001600160a01b031681565b6040516001600160a01b039091168152602001610072565b61006860025481565b61006860035481565b60015461008d906001600160a01b031681565b6100dd6100d83660046101e3565b6100df565b005b5f546001600160a01b031633146101355760405162461bcd60e51b81526020600482015260156024820152744f6e6c7920626f72726f7765722063616e2070617960581b60448201526064015b60405180910390fd5b8060035410156101875760405162461bcd60e51b815260206004820152601760248201527f5061796d656e7420657863656564732062616c616e6365000000000000000000604482015260640161012c565b8060035f82825461019891906101fa565b9091555050600354604080513381526020810184905280820192909252517fc2031f9d5046cf95ac0999bee4c7ffa7d3f21c2182851082f80916894d25d0579181900360600190a150565b5f602082840312156101f3575f5ffd5b5035919050565b8181038181111561021957634e487b7160e01b5f52601160045260245ffd5b9291505056fea26469706673582212202be81d8f00b8bb1494b3a6f2923d39b196bcd22fdb80442fb93e43765e1aa1db64736f6c634300081c0033",
+  "linkReferences": {},
+  "deployedLinkReferences": {},
+  "immutableReferences": {},
+  "inputSourceName": "project/contracts/LoanLedger.sol",
+  "buildInfoId": "solc-0_8_28-557337afbd2f01d3cc0a4df91b46b8752cd5b581"
+}

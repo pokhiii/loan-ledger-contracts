@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-557337afbd2f01d3cc0a4df91b46b8752cd5b581",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/LoanLedger.sol": "project/contracts/LoanLedger.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/LoanLedger.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ncontract LoanLedger {\n    address public borrower;\n    address public lender;\n    uint public loanAmount;\n    uint public balance;\n\n    event PaymentRecorded(address from, uint amount, uint remaining);\n\n    constructor(address _borrower, uint _loanAmount) {\n        lender = msg.sender;\n        borrower = _borrower;\n        loanAmount = _loanAmount;\n        balance = _loanAmount;\n    }\n\n    function recordPayment(uint amount) public {\n        require(msg.sender == borrower, \"Only borrower can pay\");\n        require(balance >= amount, \"Payment exceeds balance\");\n\n        balance -= amount;\n\n        emit PaymentRecorded(msg.sender, amount, balance);\n    }\n\n    function getBalance() public view returns (uint) {\n        return balance;\n    }\n}\n"
+      }
+    }
+  }
+}
